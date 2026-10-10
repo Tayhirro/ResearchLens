@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
 <title id="title">ResearchLens</title>
-<desc id="desc">Understand mechanisms. Check evidence. Transfer principles. Source documents connect through a research lens to reusable principles.</desc>
+<desc id="desc">Turn designs into research insights. Mechanisms. Evidence. Transfer. Source documents connect through a research lens to reusable principles.</desc>
 <rect width="1280" height="480" fill="#f4f1e9"/>
 <rect x="24" y="24" width="1232" height="432" rx="8" fill="#f4f1e9" stroke="#d5d7c9" stroke-width="1"/>
 <rect x="58" y="60" width="32" height="3" fill="#c1734d"/>
-<text x="104" y="67" font-family="Consolas,monospace" font-size="13" fill="#536b61">A FIELD GUIDE TO UNDERSTANDING</text>
+<text x="104" y="67" font-family="Consolas,monospace" font-size="13" fill="#536b61">A FIELD GUIDE TO RESEARCH INSIGHT</text>
 <text x="57" y="181" font-family="Georgia,serif" font-size="76" fill="#173e38">ResearchLens</text>
-<text x="60" y="239" font-family="Georgia,serif" font-size="26" fill="#314f46">Understand mechanisms.</text>
-<text x="60" y="278" font-family="Georgia,serif" font-size="26" fill="#314f46">Check evidence. Transfer principles.</text>
+<text x="60" y="239" font-family="Georgia,serif" font-size="25" fill="#314f46">Turn designs into research insights.</text>
+<text x="60" y="278" font-family="Georgia,serif" font-size="25" fill="#314f46">Mechanisms. Evidence. Transfer.</text>
 <line x1="60" y1="324" x2="561" y2="324" stroke="#c6cabc" stroke-width="1"/>
 <text x="60" y="355" font-family="Consolas,monospace" font-size="13" fill="#536b61">PAPERS / SYSTEMS / TECHNICAL IDEAS</text>
 <text x="60" y="419" font-family="Consolas,monospace" font-size="11" fill="#6b7667">QUESTION → MECHANISM → EVIDENCE → TRANSFER</text>
 <line x1="640" y1="62" x2="640" y2="418" stroke="#d5d7c9" stroke-width="1"/>
-<text x="686" y="81" font-family="Consolas,monospace" font-size="11" fill="#6b7667">01 / FROM MATERIAL TO PRINCIPLE</text>
+<text x="686" y="81" font-family="Consolas,monospace" font-size="11" fill="#6b7667">01 / FROM DESIGN TO RESEARCH INSIGHT</text>
 <rect x="697" y="176" width="72" height="104" rx="3" fill="#ece9df" stroke="#a4b2a2" stroke-width="1"/>
 <rect x="708" y="164" width="72" height="104" rx="3" fill="#f4f1e9" stroke="#a4b2a2" stroke-width="1"/>
 <rect x="719" y="152" width="72" height="104" rx="3" fill="#f4f1e9" stroke="#526e5f" stroke-width="1.5"/>

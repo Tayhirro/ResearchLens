@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="ResearchLens — Understand mechanisms. Check evidence. Transfer principles." width="100%">
+<img src="assets/banner.png" alt="ResearchLens — Turn designs into research insights. Mechanisms. Evidence. Transfer." width="100%">
 
 # ResearchLens
 
-### Understand mechanisms. Check evidence. Transfer principles.
+### Turn designs into research insights.
 
 A research analysis skill for papers, software systems, and technical proposals.
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-explore--skill-173e38?style=flat-square)](SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-ResearchLens-173e38?style=flat-square)](SKILL.md)
 [![Analysis](https://img.shields.io/badge/Analysis-Mechanism_·_Evidence_·_Transfer-173e38?style=flat-square)](#what-you-get)
 [![中文](https://img.shields.io/badge/README-中文-c1734d?style=flat-square)](README.md)
 
@@ -18,13 +18,21 @@ A research analysis skill for papers, software systems, and technical proposals.
 
 ---
 
-Give ResearchLens a paper, an open-source system, or a technical proposal, together with a question. It helps explain **why the design works, what supports its claims, and which principles can carry into your own work**.
+When you read a paper or study an open-source system, you want to understand **why its design was chosen, what the contribution changes, and what you could learn for your own research**.
 
-Start with the source's structure, examine important decisions, investigate supporting and conflicting evidence where needed, and turn the findings into reusable research notes.
+ResearchLens examines the assumptions and alternatives behind concrete decisions, traces the causal mechanisms of important contributions, and checks the reasoning against literature, experimental results, and counterexamples. When transfer matters, it extracts reusable principles, required conditions, and questions that still need testing.
 
 > **Question → Mechanism → Evidence → Boundaries → Transfer**
 
-**ResearchLens** is the display name. The installation directory and skill identifier remain `explore-skill`.
+## What makes the approach useful
+
+**Reconstruct the reasons behind a design.** Work from assumptions and constraints, consider alternatives, and examine whether the choice follows from the problem, available data, compute, or engineering conventions.
+
+**Trace each important contribution.** Connect the original difficulty to the change, the mechanism, the evidence, and the failure conditions. Each contribution gets an explanation you can inspect and question.
+
+**Ground connections across fields.** Map a mechanism to relevant concepts, investigate the literature, and distinguish direct support from synthesis. Carry the conditions and limits with each mapping.
+
+**Deepen the questions that matter to your work.** Follow consequential evidence gaps, clarify mechanisms and counterexamples, and retain reusable principles alongside hypotheses that still need verification.
 
 ## What you get
 
@@ -38,7 +46,7 @@ Start with the source's structure, examine important decisions, investigate supp
 
 Final notes follow your questions. Subproblem files retain the sources and investigation history.
 
-## A worked explanation
+## A design you can learn a principle from
 
 Consider this skill's rule that the lead agent decides which follow-up questions to investigate:
 
@@ -49,6 +57,8 @@ Consider this skill's rule that the lead agent decides which follow-up questions
 | **Evidence** | The protocol directly documents this design intention; its effectiveness needs task-level evaluation |
 | **Limits** | Separate context does not automatically provide independent evidence; the lead can misjudge priorities |
 | **Transfer** | The pattern can inform document review or technical selection when subquestions and judgment criteria are clear |
+
+The transferable principle is: **give local investigation room to discover, while keeping further investment tied to the overall goal**. In document review or technical selection, retain this relationship and check the task boundaries and the coordinator's judgment.
 
 This is an editorial explanation of the repository's rules, not a recorded skill run or performance evaluation. See the [source-backed example note](docs/example-analysis.md).
 
@@ -113,7 +123,7 @@ ResearchLens focuses on **understanding existing work, assessing evidence, and t
 | [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | Cross-model review and research/experiment improvement loops | Lead-managed peer investigations, selective deepening, and synthesis |
 | [Autoresearch](https://github.com/karpathy/autoresearch) | Experimental feedback and keep/discard optimization | Evidence-calibrated research judgments |
 
-Mechanism analysis, verification, and multiple agents also appear in related tools. The positioning here comes from the combination of question-led analysis, per-unit investigation, object-specific adaptation, and bounded transfer. This is a protocol comparison, not a performance ranking. See the [comparison notes](docs/positioning.md).
+ResearchLens connects **design reasoning, causal mechanisms, academic evidence, and transfer conditions** in an analysis you can trace back to its sources. The findings can inform research directions, technical choices, and questions for later experiments. See the [comparison notes](docs/positioning.md) for the public-protocol comparison; it does not rank performance.
 
 ## How it works
 

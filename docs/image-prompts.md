@@ -15,8 +15,8 @@
 
 左侧约 48% 为文字区：
 主标题：ResearchLens
-副标题：Understand mechanisms.
-第二行：Check evidence. Transfer principles.
+副标题：Turn designs into research insights.
+第二行：Mechanisms. Evidence. Transfer.
 底部小字：PAPERS / SYSTEMS / TECHNICAL IDEAS
 
 右侧约 45% 为精致概念插图：
@@ -32,8 +32,8 @@
 ```text
 保留这张图的构图、配色、插图和留白，只修正文案：
 ResearchLens
-Understand mechanisms.
-Check evidence. Transfer principles.
+Turn designs into research insights.
+Mechanisms. Evidence. Transfer.
 PAPERS / SYSTEMS / TECHNICAL IDEAS
 保持英文拼写准确，避免增加其他文字。
 ```
@@ -69,8 +69,8 @@ TRANSFER：保留核心关系与条件，将其映射到另一种结构；不是
 
 文字只包含：
 ResearchLens
-Understand mechanisms.
-Check evidence. Transfer principles.
+Turn designs into research insights.
+Mechanisms. Evidence. Transfer.
 
 主标题醒目且优雅，副标题清楚，所有内容位于画面中心 80% 安全区域。右侧或右下角安排概念插图，整体像一本精致的研究方法手册封面。不要伪造数据、logo、合作方、许可证、排名或成果声明。
 ```

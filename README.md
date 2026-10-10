@@ -1,14 +1,14 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="ResearchLens — Understand mechanisms. Check evidence. Transfer principles." width="100%">
+<img src="assets/banner.png" alt="ResearchLens — Turn designs into research insights. Mechanisms. Evidence. Transfer." width="100%">
 
 # ResearchLens
 
-### 读懂机制，查证依据，提炼可迁移原理。
+### 把别人的设计，变成自己的研究启发。
 
 面向论文、软件系统与技术方案的深度研究分析 skill。
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-explore--skill-173e38?style=flat-square)](SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-ResearchLens-173e38?style=flat-square)](SKILL.md)
 [![Analysis](https://img.shields.io/badge/分析-机制_·_证据_·_迁移-173e38?style=flat-square)](#你会得到什么)
 [![English](https://img.shields.io/badge/README-English-c1734d?style=flat-square)](README_EN.md)
 
@@ -18,15 +18,23 @@
 
 ---
 
-给 AI 一篇论文、一个开源系统或一项技术方案，ResearchLens 会围绕你的问题，解释它**为什么这样设计、结论凭什么成立，以及哪些原理可以迁移到你的工作中**。
+读一篇论文、研究一个开源系统，除了理解它做了什么，你还想知道：**为什么这样设计？创新究竟改变了什么？这套思路能给我的研究带来什么？**
 
-它从原材料的结构理解开始，再按需拆解关键设计、查证外部依据、寻找替代解释和失败边界，最后整理成可复用的研究笔记。
+ResearchLens 从具体设计出发，追问底层假设与替代方案，把核心创新拆成因果机制，再用文献、实验结果与反例校准判断。需要借鉴时，进一步提炼可迁移的原理、成立条件和待验证问题，整理成能继续使用的研究笔记。
 
 > **问题 → 机制 → 证据 → 边界 → 迁移**
 >
-> 把“我大概看懂了”，推进到“我能解释它、判断它，并知道如何借鉴它”。
+> 读懂设计背后的原理，让下一次研究与设计有据可循。
 
-展示名为 **ResearchLens**；安装目录与调用名仍为 `explore-skill`。
+## 特色在哪里
+
+**追问设计为什么这样选。** 从基本假设和约束重新推导：还有哪些方案？当前选择是由问题决定，还是由数据、算力或工程习惯促成？把作者的动机与实际机制放在一起判断。
+
+**逐个拆解核心创新。** 对每项重要创新或设计决策，讲清楚“原有困难 → 具体改动 → 行为如何改变 → 证据支持到哪里 → 何时失效”。你能看到贡献成立的路径，也能找到值得继续追问的环节。
+
+**让跨领域联系有依据。** 把具体机制与其他学科的概念建立对应，查证相关文献，说明哪些关系有直接支持、哪些属于综合推断。每次映射都带上成立条件和限制，方便判断能否借鉴。
+
+**沿关键问题深挖，再带回你的工作。** 根据证据缺口选择下一步调查，逐项查证与你目标相关的机制、反例和迁移条件，保留尚未解决的部分。最后留下可复用原则，以及需要继续验证的假设。
 
 ## 你会得到什么
 
@@ -40,7 +48,7 @@
 
 最终笔记按你的问题组织；各子问题的调研文件保留来源与分析过程。
 
-## 一项设计如何被分析清楚
+## 从一项设计中，带走一条可迁移原则
 
 以本 skill 的“由主 agent 决定后续调研”为例：
 
@@ -52,7 +60,9 @@
 | **边界** | 独立上下文不自动意味着独立证据；主 agent 也可能误判优先级 |
 | **迁移** | 可借鉴到长文审查或技术选型中，前提是能定义清楚的子问题与判断标准 |
 
-这是基于仓库规则整理的**讲解示例**。它用于展示分析形式，未作为 skill 实跑或效果评测。完整来源与推理见[示例笔记](docs/example-analysis.md)。
+你可以带走的原则是：**给局部探索留出发现空间，让后续投入始终受整体目标约束。** 在长文审查或技术选型中，可保留这一组织关系，并检查子任务边界和负责人判断能力。
+
+这是基于仓库规则整理的**讲解示例**，未作为 skill 实跑或效果评测。完整来源与推理见[示例笔记](docs/example-analysis.md)。
 
 ## 快速开始
 
@@ -119,7 +129,7 @@ cp -R explore-skill ~/.codex/skills/explore-skill
 | [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | 跨模型互审、实验和研究改进循环 | 主 agent 管理同级子问题查证，按需深化与综合 |
 | [Autoresearch](https://github.com/karpathy/autoresearch) | 用实验指标反馈，保留改进、舍弃失败改动 | 用证据支持程度校准研究判断 |
 
-机制分析、查证和多 agent 已在同类工具中使用。这里的定位来自**问题牵引、逐项机制分析、跨对象适配与有边界的原理迁移**这一组合。对比依据公开协议，未做效果排名；详情见[对比与定位笔记](docs/positioning.md)。
+ResearchLens 将**设计动机、因果机制、学术依据与迁移条件**连成一条可回查的分析链，为选题思考、技术选型和后续实验提供可继续追问的研究材料。完整对比见[对比与定位笔记](docs/positioning.md)；依据公开协议，未做效果排名。
 
 ## 方法如何组织
 
