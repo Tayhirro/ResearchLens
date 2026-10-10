@@ -1,264 +1,179 @@
 <div align="center">
 
-# Explore Skill
+<img src="assets/banner.png" alt="ResearchLens — Understand mechanisms. Check evidence. Transfer principles." width="100%">
 
-### Research-grade paper, topic, system, and innovation analysis for Codex-style agents
+# ResearchLens
 
-<p>
-  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent%20Skill-Codex%20%2F%20Claude-111827?style=for-the-badge">
-  <img alt="Workflow" src="https://img.shields.io/badge/Workflow-3%20Round%20Research-2563eb?style=for-the-badge">
-  <img alt="Output" src="https://img.shields.io/badge/Output-Evidence%20Ledger-7c3aed?style=for-the-badge">
-  <img alt="Language" src="https://img.shields.io/badge/Language-ZH%20%2B%20EN-059669?style=for-the-badge">
-</p>
+### 读懂机制，查证依据，提炼可迁移原理。
 
-<p>
-  <b>把“这篇论文在干什么、创新点是什么、机制是否成立、有什么值得迁移”变成可调度、可查证、可压缩的研究流程。</b>
-</p>
+面向论文、软件系统与技术方案的深度研究分析 skill。
+
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-explore--skill-173e38?style=flat-square)](SKILL.md)
+[![Analysis](https://img.shields.io/badge/分析-机制_·_证据_·_迁移-173e38?style=flat-square)](#你会得到什么)
+[![English](https://img.shields.io/badge/README-English-c1734d?style=flat-square)](README_EN.md)
+
+[分析示例](docs/example-analysis.md) · [快速开始](#快速开始) · [同类对比](#它在研究工作流中的位置) · [方法与规则](SKILL.md)
 
 </div>
 
 ---
 
-## What Is This
+给 AI 一篇论文、一个开源系统或一项技术方案，ResearchLens 会围绕你的问题，解释它**为什么这样设计、结论凭什么成立，以及哪些原理可以迁移到你的工作中**。
 
-`explore-skill` 是一个面向 Codex / Agent Skills 体系的研究分析 skill。它不是普通“总结论文”的提示词，而是一套让主 agent 管理多轮调研、子 agent 独立查证、最终压缩成研究笔记的工作流。
+它从原材料的结构理解开始，再按需拆解关键设计、查证外部依据、寻找替代解释和失败边界，最后整理成可复用的研究笔记。
 
-它适合处理：
+> **问题 → 机制 → 证据 → 边界 → 迁移**
+>
+> 把“我大概看懂了”，推进到“我能解释它、判断它，并知道如何借鉴它”。
 
-| 场景 | 它会做什么 |
+展示名为 **ResearchLens**；安装目录与调用名仍为 `explore-skill`。
+
+## 你会得到什么
+
+| 你真正关心的问题 | 分析会交付什么 |
 |---|---|
-| 论文理解 | 先读懂文章主线、章节结构、核心 claim 和证据组织 |
-| 创新点分析 | 拆成 answer units，逐项检查旧痛点、修改点、机制、证据、边界 |
-| 机制解释 | 建立因果链、替代解释、失败条件和理论依据 |
-| 系统设计分析 | 抽模块、数据流、设计取舍、可迁移原则 |
-| 复杂组合问题 | 先拆用户问题，再判断每个回答焦点是否已经足够回答 |
-| 深度调研 | 用三轮结构管理子 agent，而不是无限递归 |
+| 这篇论文或这个系统在做什么？ | 主线、核心问题、结构、模块关系与设计目标 |
+| 为什么采用这个机制？还有什么选择？ | 基本前提、替代方案、设计取舍与因果链 |
+| 作者的结论真的有依据吗？ | 支持证据、反证与缺口，区分直接支持、综合推断和未确定部分 |
+| 哪些创新或设计决策值得深入？ | 对核心单元逐项分析：痛点 → 修改点 → 机制 → 证据 → 边界 |
+| 能借鉴到我的研究或项目中吗？ | 可迁移原则、目标场景所需条件、映射限制与风险 |
 
----
+最终笔记按你的问题组织；各子问题的调研文件保留来源与分析过程。
 
-## Core Idea
+## 一项设计如何被分析清楚
 
-> 先拆问题，再查证据，最后压缩成自己的知识结构。
+以本 skill 的“由主 agent 决定后续调研”为例：
 
-The skill forces the agent to avoid the common failure mode:
+| 分析步骤 | 讲解示例 |
+|---|---|
+| **问题** | 如何让子问题不断深入，同时控制范围扩张？ |
+| **机制** | 子 agent 返回证据、缺口和候选问题；主 agent 合并候选，只提升影响最终判断的问题 |
+| **证据** | 调度规则直接支持这一设计意图；其效果仍需实际任务验证 |
+| **边界** | 独立上下文不自动意味着独立证据；主 agent 也可能误判优先级 |
+| **迁移** | 可借鉴到长文审查或技术选型中，前提是能定义清楚的子问题与判断标准 |
 
-> Round 1 看起来材料很多，于是直接写最终答案。
+这是基于仓库规则整理的**讲解示例**。它用于展示分析形式，未作为 skill 实跑或效果评测。完整来源与推理见[示例笔记](docs/example-analysis.md)。
 
-Instead, it uses:
+## 快速开始
 
-- `User Question Decomposition`：先拆用户真正问了几个问题；
-- `answer units`：把创新点、机制、claim、模块等变成可检查对象；
-- `evidence ledger`：记录每个结论的证据来源、缺口和状态；
-- `three-round workflow`：只保留 Round 1 / Round 2 / Round 3，避免流程膨胀；
-- `stop-challenge`：最终前检查是否过早停止。
+### 1. 安装完整目录
 
----
+以下为首次手动安装。需要 Git，以及支持读取 skill 文件的 agent 环境。
 
-## Workflow
+**Codex · Windows PowerShell**
 
-```mermaid
-flowchart TD
-    A[User Question] --> B[User Question Decomposition]
-    B --> C[Focus Table: overview / standard / deep]
-    C --> D[Round 1: Orientation]
-    D --> E[Checkpoint: Answer Units + Evidence Ledger]
-    E --> F{Can every focus be answered?}
-    F -- No --> G[Round 2: Focused Investigation]
-    G --> E
-    F -- Yes --> H[Round 3: Final Check]
-    H --> I{Early-stop risk or unsupported claim?}
-    I -- High-impact gap --> G
-    I -- Weak but answerable --> J[Degrade / Mark Weak]
-    I -- Supported --> K[Final Research Note]
-    J --> K
+```powershell
+git clone https://github.com/Tayhirro/explore-skill.git
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills" | Out-Null
+Copy-Item -Recurse .\explore-skill "$env:USERPROFILE\.codex\skills\explore-skill"
 ```
 
----
+**Codex · macOS / Linux**
 
-## Three Rounds
+```bash
+git clone https://github.com/Tayhirro/explore-skill.git
+mkdir -p ~/.codex/skills
+cp -R explore-skill ~/.codex/skills/explore-skill
+```
 
-| Round | Role | What Happens |
+重新启动会话，让环境加载 skill。已经安装的用户请更新原安装目录，避免重复复制形成嵌套文件夹。
+
+安装时保留 `SKILL.md`、三个 `config-*.md` 和整个 `tasks/` 目录。对象配置与任务协议是执行流程的一部分。
+
+其他支持 Agent Skills 的环境，可按其安装方式加载完整目录；实际查证需要可用的检索工具，复杂任务还需要子 agent 能力。
+
+### 2. 给出材料与问题
+
+```text
+用 explore-skill 分析这篇论文：
+<论文链接或本地 PDF 路径>
+
+我想知道每个核心创新解决了什么问题，
+机制为什么成立，实验支持到了哪一步，
+以及哪些原理能迁移到我的研究中。
+```
+
+也可以分析系统或技术方案：
+
+```text
+用 explore-skill 对比这两个系统的架构：
+<仓库 A> <仓库 B>
+
+重点分析关键设计决策、替代方案、成立条件，
+以及对我的项目有哪些可迁移的原则。
+项目约束：<你的场景与约束>
+```
+
+当前协议要求先确认分析规划。问题类型决定后续深度：简单机制可直接解释，深入创新分析和多对象对比有更完整的查证要求。
+
+## 它在研究工作流中的位置
+
+研究工具可以帮助你读懂已有工作、确定研究方向、运行实验或组织论文写作。ResearchLens 集中在**对已有对象的机制理解、证据判断与原理迁移**。
+
+| 相邻 skill / 项目 | 其主要侧重 | ResearchLens 的侧重 |
 |---|---|---|
-| `round1/` | Orientation | Read source material, understand paper/topic/system, collect candidate answer units |
-| `round2/` | Focused Investigation | Only research promoted answer units; no broad background expansion |
-| `round3/` | Final Check | Claim checking, evidence sufficiency, anti-early-stop audit, final synthesis |
+| [Nature Paper X-Ray](https://github.com/Yuan1z0825/nature-skills/tree/main/skills/nature-paper-xray) | 单篇论文精读、公式微例子、设计取舍与证据边界 | 将论文、系统与技术方案纳入同一分析方法，并按问题组织外部查证和迁移判断 |
+| [Academic Research Skills](https://github.com/Imbad0202/academic-research-skills) | 文献综合、研究报告、写作、评审与修订 | 围绕核心机制或设计决策形成研究笔记 |
+| [Feynman](https://github.com/Companion-Inc/feynman) | 检索、引用验证、研究简报、审查和实验等 CLI 工作流 | 以 skill 指令组织问题分析和研究笔记，检索由宿主提供 |
+| [Research Companion](https://github.com/andrehuang/research-companion) | 构思、评估研究方向，决定推进、暂存或放弃 | 从已有论文、系统或方案中提炼机制、边界和可迁移原则 |
+| [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | 跨模型互审、实验和研究改进循环 | 主 agent 管理同级子问题查证，按需深化与综合 |
+| [Autoresearch](https://github.com/karpathy/autoresearch) | 用实验指标反馈，保留改进、舍弃失败改动 | 用证据支持程度校准研究判断 |
 
-The rule is intentionally strict:
+机制分析、查证和多 agent 已在同类工具中使用。这里的定位来自**问题牵引、逐项机制分析、跨对象适配与有边界的原理迁移**这一组合。对比依据公开协议，未做效果排名；详情见[对比与定位笔记](docs/positioning.md)。
 
-> Round 2 cannot open new broad research directions. Round 3 cannot become another literature review.
+## 方法如何组织
 
----
+```mermaid
+flowchart LR
+    A["材料与用户问题"] --> B["确认范围与分析深度"]
+    B --> C["理解对象结构"]
+    C --> D["逐项分析关键机制"]
+    D --> E["核对证据与边界"]
+    E --> F["研究笔记与迁移判断"]
+    E -. "重要缺口" .-> D
+```
 
-## How It Handles Different Questions
+- **先理解原对象。** 外部资料用于补充或核对，保留原文、系统结构和实际问题作为主线。
+- **逐项检查关键单元。** 用具体机制或设计决策组织分析，记录后续候选问题的处理理由。
+- **只深化重要缺口。** 主 agent 统一调度；子 agent 返回候选问题，不再创建下级 agent。
+- **证据不足就降低结论强度。** 保留不确定性，说明引用、推断和映射的支持范围。
+- **按任务选择深度。** 当前规则包含定向检索、聚焦补查、关键断言验证，也允许主 agent 调度后续深化。
 
-The same paper can require different depth depending on the user question.
+具体执行以 [SKILL.md](SKILL.md)、对象配置和任务协议为准。
 
-| User asks | Focus depth | Expected behavior |
-|---|---:|---|
-| “这篇论文在干什么？” | `overview` | Round 1 is often enough |
-| “这篇论文在干什么？创新点是什么？” | `standard` | Round 1 may be enough, but evidence strength must be recorded |
-| “深入分析每个创新点，机制和证据如何？” | `deep` | Each innovation becomes an answer unit and usually enters Round 2 |
-| “这个 claim 是否真的成立？” | `deep` | Requires evidence ledger and Round 3 claim checking |
-| “有什么能迁移到我的系统？” | `standard` or `deep` | Requires applicability, boundary, and risk analysis |
-
----
-
-## Repository Layout
+<details>
+<summary><strong>查看文件结构与执行入口</strong></summary>
 
 ```text
 explore-skill/
-├── README.md
 ├── SKILL.md
-└── .gitignore
+├── config-paper.md
+├── config-system.md
+├── config-tech.md
+├── tasks/
+├── README.md
+├── README_EN.md
+├── assets/
+└── docs/
 ```
 
-During actual use, the agent may create temporary research artifacts in the working project:
-
-```text
-tmp/
-  research_state.md
-  evidence_mapping.md
-  evidence_ledger.md
-  followup_candidates.md
-  stop_challenge.md
-  01-<short-topic>问题研究/
-    research.md
-    rounds/
-      round1/
-      round2/
-      round3/
-```
-
-Those generated artifacts are intentionally not part of this skill repository.
-
----
-
-## Install
-
-### Codex
-
-Copy this folder into your Codex skills directory:
-
-```powershell
-Copy-Item -Recurse -Force .\explore-skill "$env:USERPROFILE\.codex\skills\explore-skill"
-```
-
-Restart Codex so the skill metadata is reloaded.
-
-### Manual
-
-The only required file is:
-
-```text
-SKILL.md
-```
-
-The frontmatter contains the trigger metadata, and the body contains the workflow instructions.
-
----
-
-## Example Prompts
-
-```text
-用 explore-skill 分析这篇论文在干什么，创新点是什么：
-https://arxiv.org/pdf/2604.00969
-```
-
-```text
-深入分析这篇论文的每个创新点：它解决了什么痛点，机制为什么成立，证据是否充分，有什么可以迁移到我的系统设计里？
-```
-
-```text
-这个方法的核心机制是否真的被实验支撑？请区分原文直接证据、综合推断和不确定部分。
-```
-
----
-
-## Output Style
-
-The final note is organized by the user's actual question focus, not by sub-agent order.
-
-```md
-## Paper / Topic
-
-本质：
-- 一句话本质
-
-## 这篇文章在干什么
-
-...
-
-## 核心创新点
-
-### Innovation 1
-旧痛点 -> 修改点 -> 机制 -> 证据 -> 边界
-
-### Innovation 2
-...
-
-## 证据强度与不确定部分
-
-...
-
-## 可迁移启发
-
-...
-```
-
----
-
-## Design Principles
-
-| Principle | Meaning |
+| 入口 | 用途 |
 |---|---|
-| User-question first | The agent must first split the user's original question into answer focuses |
-| Evidence before confidence | “我觉得够了” is not a stopping condition |
-| Flat orchestration | Sub agents cannot create sub-sub agents; only the main agent schedules rounds |
-| Three rounds only | Gap filling and verification are actions inside Round 2 / Round 3, not extra stages |
-| Weak is allowed | Unsupported or partial claims can remain, but must be marked as weak |
-| Notes over dumps | The final output compresses research into reusable knowledge, not raw retrieval logs |
+| [SKILL.md](SKILL.md) | 核心方法、调度与综合规则 |
+| [config-paper.md](config-paper.md) | 论文、算法与综述 |
+| [config-system.md](config-system.md) | 系统、代码库与架构 |
+| [config-tech.md](config-tech.md) | 框架、协议与技术方案 |
+| [tasks/](tasks/) | 概览、创新、机制、评价、对比等任务协议 |
 
----
+使用时，研究状态、问题研究文件和各轮输出写入工作项目的 `tmp/`。最终笔记与过程文件共同保留可追溯的依据。
 
-## Why This Exists
+</details>
 
-Large language models often stop early when the first round of evidence feels coherent. For research work, that is not enough. This skill makes the agent externalize:
+## 使用边界与反馈
 
-- what the user actually asked;
-- which answer units are required;
-- what evidence supports each unit;
-- where the evidence is weak;
-- why final output is allowed.
+本仓库提供研究分析指令与配置。输出质量受材料完整性、检索可用性、宿主执行能力和人工复核影响。理论映射需要说明对应关系与限制；引用核对也应检查原文实际支持范围。
 
-The goal is not to make every task heavy. The goal is to make depth proportional to the question.
+欢迎通过 [Issues](https://github.com/Tayhirro/explore-skill/issues) 分享具体案例：你的问题、使用材料、哪一项机制或证据被遗漏，以及期望怎样分析。
 
----
-
-## Inspiration
-
-This README follows common patterns from public agent-skill repositories:
-
-- clear skill definition and folder expectations, as seen in Anthropic's public Agent Skills repository;
-- curated-skill README structure from Codex and Claude skill collections;
-- explicit installation, examples, workflow, and quality gates for human readers.
-
-Useful references:
-
-- Anthropic Agent Skills: https://github.com/anthropics/skills
-- Awesome Codex Skills: https://github.com/composiohq/awesome-codex-skills
-- Codex Skills Library: https://github.com/proflead/codex-skills-library
-
----
-
-## Status
-
-This skill is actively evolving around real research workflows:
-
-- paper innovation analysis;
-- multi-question decomposition;
-- anti-early-stop checks;
-- evidence ledger design;
-- note-style compression.
-
-Use it, test it on difficult papers, and tighten the workflow where the agent still stops too early.
+[English README](README_EN.md) · [视觉素材提示词](docs/image-prompts.md) · [对比依据](docs/positioning.md)
 
