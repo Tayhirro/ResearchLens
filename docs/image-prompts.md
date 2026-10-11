@@ -1,6 +1,6 @@
 # ResearchLens：GPT 网页版生图提示词
 
-以下用于你在 GPT 网页版生成静态素材。当前 README 使用由实时 WebGL 场景导出的 [GIF 横幅](../assets/banner.gif)，点击可进入[交互页面](https://tayhirro.github.io/explore-skill/)。动画的维护说明见[动画设计与导出](animation-design.md)。
+以下用于你在 GPT 网页版生成静态素材。当前 README 使用由实时 WebGL 场景导出的 [GIF 横幅](../assets/banner.gif)，点击可进入[交互页面](https://tayhirro.github.io/ResearchLens/)。动画的维护说明见[动画设计与导出](animation-design.md)。
 
 以下静态素材沿用暖白、深墨绿与陶土色的研究手册风格；当前动画则使用深墨绿背景、浅绿机制线与暖铜色证据标记。主体都是材料、机制、证据与迁移的关系，长文放在 README 中。
 

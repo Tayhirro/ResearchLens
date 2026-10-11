@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://tayhirro.github.io/explore-skill/"><img src="assets/banner.gif" alt="ResearchLens — Material flows through a research lens into mechanisms, evidence, and a new context. Click for the interactive animation." width="100%"></a>
+<a href="https://tayhirro.github.io/ResearchLens/"><img src="assets/banner.gif" alt="ResearchLens — Material flows through a research lens into mechanisms, evidence, and a new context. Click for the interactive animation." width="100%"></a>
 
 # ResearchLens
 
@@ -12,7 +12,7 @@ A research analysis skill for papers, software systems, and technical proposals.
 [![Analysis](https://img.shields.io/badge/Analysis-Mechanism_·_Evidence_·_Transfer-173e38?style=flat-square)](#what-you-get)
 [![中文](https://img.shields.io/badge/README-中文-c1734d?style=flat-square)](README.md)
 
-[Interactive animation](https://tayhirro.github.io/explore-skill/) · [Example](docs/example-analysis.md) · [Quick start](#quick-start) · [Related tools](#where-it-fits) · [Protocol](SKILL.md)
+[Interactive animation](https://tayhirro.github.io/ResearchLens/) · [Example](docs/example-analysis.md) · [Quick start](#quick-start) · [Related tools](#where-it-fits) · [Protocol](SKILL.md)
 
 </div>
 
@@ -71,17 +71,17 @@ These commands describe a first manual installation. You need Git and an agent e
 **Codex · Windows PowerShell**
 
 ```powershell
-git clone https://github.com/Tayhirro/explore-skill.git
+git clone https://github.com/Tayhirro/ResearchLens.git
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills" | Out-Null
-Copy-Item -Recurse .\explore-skill "$env:USERPROFILE\.codex\skills\explore-skill"
+Copy-Item -Recurse .\ResearchLens "$env:USERPROFILE\.codex\skills\explore-skill"
 ```
 
 **Codex · macOS / Linux**
 
 ```bash
-git clone https://github.com/Tayhirro/explore-skill.git
+git clone https://github.com/Tayhirro/ResearchLens.git
 mkdir -p ~/.codex/skills
-cp -R explore-skill ~/.codex/skills/explore-skill
+cp -R ResearchLens ~/.codex/skills/explore-skill
 ```
 
 Start a new session to load the skill. If already installed, update the existing installation rather than creating a nested copy.
@@ -149,7 +149,7 @@ The authoritative execution rules are in [SKILL.md](SKILL.md), the object config
 <summary><strong>Files and execution entry points</strong></summary>
 
 ```text
-explore-skill/
+ResearchLens/
 ├── SKILL.md
 ├── config-paper.md
 ├── config-system.md
@@ -171,6 +171,6 @@ Research state, subproblem files, and round outputs live in the working project'
 
 This repository provides instructions and configuration. Output quality depends on available material, retrieval, host execution, and human review. Concept mappings should explain their limits, and citation checks should inspect what the original source actually supports.
 
-Use [Issues](https://github.com/Tayhirro/explore-skill/issues) to share a concrete question, source material, an omitted mechanism or evidence gap, and the analysis you expected.
+Use [Issues](https://github.com/Tayhirro/ResearchLens/issues) to share a concrete question, source material, an omitted mechanism or evidence gap, and the analysis you expected.
 
 [中文 README](README.md) · [Visual prompts](docs/image-prompts.md) · [Comparison notes](docs/positioning.md)

@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://tayhirro.github.io/explore-skill/"><img src="assets/banner.gif" alt="ResearchLens — 研究材料经过透镜，展开机制与证据，再迁移到新结构。点击体验交互动画。" width="100%"></a>
+<a href="https://tayhirro.github.io/ResearchLens/"><img src="assets/banner.gif" alt="ResearchLens — 研究材料经过透镜，展开机制与证据，再迁移到新结构。点击体验交互动画。" width="100%"></a>
 
 # ResearchLens
 
@@ -12,7 +12,7 @@
 [![Analysis](https://img.shields.io/badge/分析-机制_·_证据_·_迁移-173e38?style=flat-square)](#你会得到什么)
 [![English](https://img.shields.io/badge/README-English-c1734d?style=flat-square)](README_EN.md)
 
-[体验交互动画](https://tayhirro.github.io/explore-skill/) · [分析示例](docs/example-analysis.md) · [快速开始](#快速开始) · [同类对比](#它在研究工作流中的位置) · [方法与规则](SKILL.md)
+[体验交互动画](https://tayhirro.github.io/ResearchLens/) · [分析示例](docs/example-analysis.md) · [快速开始](#快速开始) · [同类对比](#它在研究工作流中的位置) · [方法与规则](SKILL.md)
 
 </div>
 
@@ -73,17 +73,17 @@ ResearchLens 从具体设计出发，追问底层假设与替代方案，把核�
 **Codex · Windows PowerShell**
 
 ```powershell
-git clone https://github.com/Tayhirro/explore-skill.git
+git clone https://github.com/Tayhirro/ResearchLens.git
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills" | Out-Null
-Copy-Item -Recurse .\explore-skill "$env:USERPROFILE\.codex\skills\explore-skill"
+Copy-Item -Recurse .\ResearchLens "$env:USERPROFILE\.codex\skills\explore-skill"
 ```
 
 **Codex · macOS / Linux**
 
 ```bash
-git clone https://github.com/Tayhirro/explore-skill.git
+git clone https://github.com/Tayhirro/ResearchLens.git
 mkdir -p ~/.codex/skills
-cp -R explore-skill ~/.codex/skills/explore-skill
+cp -R ResearchLens ~/.codex/skills/explore-skill
 ```
 
 重新启动会话，让环境加载 skill。已经安装的用户请更新原安装目录，避免重复复制形成嵌套文件夹。
@@ -155,7 +155,7 @@ flowchart LR
 <summary><strong>查看文件结构与执行入口</strong></summary>
 
 ```text
-explore-skill/
+ResearchLens/
 ├── SKILL.md
 ├── config-paper.md
 ├── config-system.md
@@ -183,7 +183,7 @@ explore-skill/
 
 本仓库提供研究分析指令与配置。输出质量受材料完整性、检索可用性、宿主执行能力和人工复核影响。理论映射需要说明对应关系与限制；引用核对也应检查原文实际支持范围。
 
-欢迎通过 [Issues](https://github.com/Tayhirro/explore-skill/issues) 分享具体案例：你的问题、使用材料、哪一项机制或证据被遗漏，以及期望怎样分析。
+欢迎通过 [Issues](https://github.com/Tayhirro/ResearchLens/issues) 分享具体案例：你的问题、使用材料、哪一项机制或证据被遗漏，以及期望怎样分析。
 
 [English README](README_EN.md) · [视觉素材提示词](docs/image-prompts.md) · [对比依据](docs/positioning.md)
 

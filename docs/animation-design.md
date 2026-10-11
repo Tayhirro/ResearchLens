@@ -1,6 +1,6 @@
 # ResearchLens 动态横幅与交互页面
 
-README 中的 [GIF 横幅](../assets/banner.gif)与[交互页面](https://tayhirro.github.io/explore-skill/)来自同一套实时 WebGL 场景。动画表达研究方法，不是 skill 的实跑录像或质量评测。
+README 中的 [GIF 横幅](../assets/banner.gif)与[交互页面](https://tayhirro.github.io/ResearchLens/)来自同一套实时 WebGL 场景。动画表达研究方法，不是 skill 的实跑录像或质量评测。
 
 ## 设计方向
 
