@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="ResearchLens — Turn designs into research insights. Mechanisms. Evidence. Transfer." width="100%">
+<a href="https://tayhirro.github.io/explore-skill/"><img src="assets/banner.gif" alt="ResearchLens — Material flows through a research lens into mechanisms, evidence, and a new context. Click for the interactive animation." width="100%"></a>
 
 # ResearchLens
 
@@ -12,7 +12,7 @@ A research analysis skill for papers, software systems, and technical proposals.
 [![Analysis](https://img.shields.io/badge/Analysis-Mechanism_·_Evidence_·_Transfer-173e38?style=flat-square)](#what-you-get)
 [![中文](https://img.shields.io/badge/README-中文-c1734d?style=flat-square)](README.md)
 
-[Example](docs/example-analysis.md) · [Quick start](#quick-start) · [Related tools](#where-it-fits) · [Protocol](SKILL.md)
+[Interactive animation](https://tayhirro.github.io/explore-skill/) · [Example](docs/example-analysis.md) · [Quick start](#quick-start) · [Related tools](#where-it-fits) · [Protocol](SKILL.md)
 
 </div>
 

@@ -1,0 +1,89 @@
+:root{color-scheme:dark;--ink:#101816;--paper:#f2efe4;--muted:#a3afa3;--sage:#b9d9a4;--copper:#cb9b76;--line:rgba(210,223,207,.13)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:2px solid var(--sage);outline-offset:5px}
+button{cursor:pointer}
+.navigation{height:88px;max-width:1440px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 64px;border-bottom:1px solid var(--line)}
+.wordmark{font-family:Georgia,"Iowan Old Style",serif;font-size:22px;display:inline-flex;align-items:center;gap:12px}
+.lens-mark{display:inline-block;width:19px;height:19px;border:1px solid var(--sage);border-radius:50%;position:relative}
+.lens-mark:after{content:"";position:absolute;inset:3px;border:1px solid var(--sage);border-radius:50%;transform:rotate(-35deg) scaleX(.48)}
+.navigation-note,.repository-link,.eyebrow,.hero-topics,.phase-navigation,.scene-annotation,.hero-caption,.section-number,.principle-term,footer>span{font-family:Consolas,"SFMono-Regular",monospace}
+.navigation-note{font-size:11px;letter-spacing:1.5px;color:#869387}
+.repository-link{font-size:13px;display:flex;align-items:center;gap:28px}
+.repository-link span{font-size:21px;color:var(--sage)}
+.hero{position:relative;height:600px;max-width:1440px;margin:auto;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 74% 43%,rgba(93,132,76,.13),transparent 41%),linear-gradient(110deg,#101816,#141e19)}
+.hero-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(197,217,181,.13) .6px,transparent .6px);background-size:24px 24px;mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.3) 35%,black)}
+#research-scene{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.hero-copy{position:relative;z-index:1;pointer-events:none;padding:90px 0 0 64px;width:53%}
+.eyebrow{font-size:11px;letter-spacing:1.3px;color:#a5b496;display:flex;gap:10px;align-items:center;margin:0 0 26px}
+.eyebrow span{width:16px;height:2px;background:var(--copper)}
+h1{font:normal 76px/.99 Georgia,"Iowan Old Style",serif;letter-spacing:-4px;margin:0 0 25px}
+.title-period{color:var(--sage)}
+.hero-statement{font-size:27px;line-height:1.55;font-weight:500;letter-spacing:.5px;margin:0 0 16px}
+.hero-description{font-size:14px;line-height:1.9;color:var(--muted);margin:0}
+.hero-topics{font-size:13px;letter-spacing:1.1px;color:#a0ab98;margin:27px 0 0}
+.hero-topics i{font-style:normal;color:#687b63;margin:0 7px}
+.scene-annotation{position:absolute;inset:0;pointer-events:none;font-size:8px;letter-spacing:1px;color:#93a388}
+.scene-annotation span{position:absolute;top:69%}
+.source-label{left:51.4%}
+.mechanism-label{left:69.5%}
+.transfer-label{left:88.9%}
+.hero-caption{position:absolute;bottom:92px;left:64px;display:flex;align-items:center;gap:12px;font-size:13px;color:#bdc6b7}
+#phase-number{color:var(--copper)}
+.motion-controls{position:absolute;bottom:89px;right:64px}
+.motion-controls button{display:flex;gap:9px;align-items:center;background:transparent;border:0;font-size:13px;color:var(--muted);padding:6px;transition:transform .12s}
+.motion-controls button:active,.phase-navigation button:active{transform:translateY(1px) scale(.98)}
+.pause-icon{font-size:13px;width:14px;color:var(--sage)}
+.phase-navigation{--phase-gap:24px;position:absolute;bottom:0;left:64px;right:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--phase-gap);border-top:1px solid var(--line)}
+.phase-navigation:before{content:"";position:absolute;top:-1px;left:calc(var(--selected-phase,0) * (100% + var(--phase-gap)) / 4);width:calc((100% - var(--phase-gap) * 3) / 4);height:2px;background:var(--sage);transition:left .28s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.phase-navigation button{height:70px;position:relative;display:flex;align-items:center;gap:12px;background:transparent;border:0;text-align:left;padding:0;color:#9aa893;font-size:12px;letter-spacing:.7px;transition:color .18s,transform .12s}
+.phase-index{font-size:10px;color:#61735b}
+.phase-navigation em{font:normal 12px "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:0;margin-left:auto;color:#8da085}
+.phase-navigation button[aria-pressed="true"]{color:var(--paper)}
+.phase-navigation button[aria-pressed="true"] .phase-index,.phase-navigation button[aria-pressed="true"] em{color:var(--sage)}
+.phase-navigation i{display:none}
+#scene-poster{position:absolute;width:55%;right:0;top:15%;pointer-events:none}
+#scene-fallback{position:absolute;right:5%;top:46%;max-width:35%;font-size:20px;line-height:1.8;color:var(--sage)}
+.introduction{max-width:1312px;margin:0 auto;padding:100px 0 78px;display:grid;grid-template-columns:1fr 1fr;gap:100px;border-top:1px solid var(--line)}
+.section-number{font-size:10px;letter-spacing:1.5px;color:var(--copper);margin:0 0 24px}
+h2{font-weight:400;font-size:38px;line-height:1.55;letter-spacing:1px;margin:0}
+.introduction h2 span{color:#a1b496}
+.introduction-copy{max-width:500px;color:#afb9aa;font-size:16px;line-height:1.9;padding-top:28px}
+.introduction-copy p{margin:0 0 20px}
+.text-link{display:inline-flex;align-items:center;gap:42px;font-size:13px;color:var(--sage);padding-bottom:8px;border-bottom:1px solid #4d6245}
+.principles{max-width:1312px;margin:auto;border-top:1px solid var(--line)}
+.principles article{display:flex;gap:42px;align-items:flex-start;padding:36px 0;border-bottom:1px solid var(--line)}
+.principle-number{font:12px Consolas,monospace;color:var(--copper);padding-top:6px}
+.principles h3{font-size:20px;font-weight:400;margin:0 0 12px}
+.principles p{color:var(--muted);font-size:15px;line-height:1.9;max-width:635px;margin:0}
+.principle-term{margin-left:auto;font-size:10px;letter-spacing:1px;color:#72866a;padding-top:8px}
+.call-to-action{max-width:1312px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:90px 0}
+.call-to-action a{display:flex;align-items:center;gap:70px;font-size:14px;padding:24px 28px;background:#b8d6a4;color:#152213;transition:background .2s}
+.call-to-action a:hover{background:#d0e6c2}
+.call-to-action a span{font-size:24px}
+footer{max-width:1440px;margin:auto;padding:30px 64px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line)}
+footer .wordmark{font-size:18px}
+footer p{color:#81927a;font-size:11px}footer p a{border-bottom:1px solid #53654d}footer>span{font-size:9px;letter-spacing:1px;color:#7c8c75}
+body[data-capture] .navigation,body[data-capture] .introduction,body[data-capture] .principles,body[data-capture] .call-to-action,body[data-capture] footer,body[data-capture] .motion-controls{display:none}
+body[data-capture] .hero{height:560px;width:1280px;max-width:none}
+body[data-capture] .hero-copy{padding-top:72px}
+body[data-capture] .phase-navigation:before{transition:none}
+body[data-capture] .hero-caption{bottom:88px}
+body[data-capture] .phase-navigation button{height:66px}
+@media(min-width:1450px){.hero{border-left:1px solid var(--line);border-right:1px solid var(--line)}}
+@media(max-width:1380px){.introduction,.principles,.call-to-action{margin-left:64px;margin-right:64px}}
+@media(max-width:1080px){.navigation{padding:0 32px}.hero-copy{padding-left:32px}h1{font-size:64px}.hero-statement{font-size:23px}.hero-description{font-size:12px}.hero-caption{left:32px}.motion-controls{right:32px}.phase-navigation{left:32px;right:32px;gap:18px}.phase-navigation em{display:none}.introduction,.principles,.call-to-action{margin-left:32px;margin-right:32px}.introduction{gap:45px}.principle-term{display:none}footer{padding-left:32px;padding-right:32px}}
+@media(max-width:700px){.navigation{height:70px;padding:0 24px}.navigation-note{display:none}.wordmark{font-size:20px}.repository-link{font-size:12px;gap:12px}.hero{height:800px}.hero-copy{width:100%;padding:35px 24px 0}.eyebrow{font-size:9px;margin-bottom:20px}h1{font-size:64px;letter-spacing:-3px;margin-bottom:19px}.hero-statement{font-size:23px;line-height:1.5}.hero-description{font-size:12px}.hero-topics{font-size:8px;margin-top:16px}.scene-annotation span{top:75%;font-size:7px;letter-spacing:.3px}.source-label{left:14%}.mechanism-label{left:41.5%}.transfer-label{left:77%}.hero-caption{left:24px;bottom:102px;font-size:10px;gap:8px}.motion-controls{right:20px;bottom:68px}.motion-label{display:none}.phase-navigation{left:24px;right:24px;bottom:0;gap:10px}.phase-navigation button{height:55px;font-size:8px;letter-spacing:0;gap:5px}.phase-index{font-size:8px}.introduction,.principles,.call-to-action{margin-left:24px;margin-right:24px}.introduction{padding:58px 0 45px;grid-template-columns:1fr;gap:24px}.introduction-copy{padding-top:0;font-size:13px}.section-number{font-size:9px;margin-bottom:18px}h2{font-size:29px}.principles article{padding:26px 0;gap:20px}.principles h3{font-size:18px}.principles p{font-size:12px}.call-to-action{padding:54px 0;align-items:flex-start;gap:30px;flex-direction:column}.call-to-action a{width:100%;justify-content:space-between;font-size:13px;padding:20px 22px}footer{padding:25px 24px;flex-wrap:wrap;gap:15px}footer p{order:3;width:100%;font-size:10px;margin:0}footer>span{font-size:8px}#scene-fallback{top:52%;left:24px;right:24px;max-width:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.call-to-action a{transition:none}}
+
+/* Keep the supported small viewports readable rather than shrinking the scene's copy. */
+@media(max-width:1080px){.hero-description{font-size:14px}.phase-navigation{--phase-gap:18px}}
+@media(max-width:700px){h1{font-size:clamp(36px,12vw,56px);letter-spacing:-2.5px}.hero-description{font-size:14px}.hero-topics{font-size:12px}.hero-caption{font-size:12px}.phase-navigation{--phase-gap:10px}.phase-navigation button{gap:6px;font-size:12px}.phase-navigation button>span:nth-child(2){display:none}.phase-navigation em{display:block;font-size:12px;margin-left:0}.phase-index{font-size:10px}.introduction-copy{font-size:15px}.principles p{font-size:14px}#scene-poster{width:100%;top:43%}}
+@keyframes enter-copy{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+body:not([data-capture]) .hero-copy{animation:enter-copy .45s cubic-bezier(.2,.7,.2,1) both}
+@media(prefers-reduced-motion:reduce){.phase-navigation:before,.phase-navigation button,.motion-controls button{transition:none}body:not([data-capture]) .hero-copy{animation:none}}

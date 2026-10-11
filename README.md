@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="ResearchLens — Turn designs into research insights. Mechanisms. Evidence. Transfer." width="100%">
+<a href="https://tayhirro.github.io/explore-skill/"><img src="assets/banner.gif" alt="ResearchLens — 研究材料经过透镜，展开机制与证据，再迁移到新结构。点击体验交互动画。" width="100%"></a>
 
 # ResearchLens
 
@@ -12,7 +12,7 @@
 [![Analysis](https://img.shields.io/badge/分析-机制_·_证据_·_迁移-173e38?style=flat-square)](#你会得到什么)
 [![English](https://img.shields.io/badge/README-English-c1734d?style=flat-square)](README_EN.md)
 
-[分析示例](docs/example-analysis.md) · [快速开始](#快速开始) · [同类对比](#它在研究工作流中的位置) · [方法与规则](SKILL.md)
+[体验交互动画](https://tayhirro.github.io/explore-skill/) · [分析示例](docs/example-analysis.md) · [快速开始](#快速开始) · [同类对比](#它在研究工作流中的位置) · [方法与规则](SKILL.md)
 
 </div>
 

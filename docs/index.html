@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101816">
+  <meta name="description" content="ResearchLens：把别人的设计，变成自己的研究启发。追问设计动机、拆解因果机制、查证学术依据，并提炼有条件的迁移原理。">
+  <title>ResearchLens — 把设计变成研究启发</title>
+  <link rel="stylesheet" href="research-lens.css">
+  <script src="research-lens.js" defer></script>
+</head>
+<body>
+  <nav class="navigation" aria-label="页面导航">
+    <a class="wordmark" href="./" aria-label="ResearchLens 首页"><span class="lens-mark" aria-hidden="true"></span>ResearchLens</a>
+    <span class="navigation-note">A WAY OF SEEING RESEARCH</span>
+    <a class="repository-link" href="https://github.com/Tayhirro/explore-skill">GitHub <span aria-hidden="true">↗</span></a>
+  </nav>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <canvas id="research-scene" aria-hidden="true"></canvas>
+      <img id="scene-poster" src="lens-poster.png" alt="研究材料经过透镜，展开机制网络，再迁移到新结构" hidden loading="lazy">
+      <div class="hero-copy">
+        <h1 id="hero-title">ResearchLens<span class="title-period">.</span></h1>
+        <p class="hero-statement">把别人的设计，<br>变成自己的研究启发。</p>
+        <p class="hero-description">追问为什么这样选，拆解创新如何起作用，<br>把有依据的原理带回你的研究。</p>
+        <p class="hero-topics">论文 <i>/</i> 开源系统 <i>/</i> 技术方案</p>
+      </div>
+      <div class="scene-annotation" aria-hidden="true">
+        <span class="source-label">SOURCE MATERIAL</span>
+        <span class="mechanism-label">UNDERLYING MECHANISM</span>
+        <span class="transfer-label">NEW CONTEXT</span>
+      </div>
+      <div class="hero-caption" aria-live="off"><span id="phase-number">01 /</span><span id="phase-caption">从一个值得追问的问题开始。</span></div>
+      <div class="motion-controls">
+        <button id="motion-toggle" type="button" aria-label="暂停动画" aria-pressed="false"><span class="pause-icon" aria-hidden="true">Ⅱ</span><span class="motion-label">暂停</span></button>
+      </div>
+      <div class="phase-navigation" aria-label="探索分析过程">
+        <button type="button" data-phase="0" aria-pressed="true"><span class="phase-index">01</span><span>QUESTION</span><em>提出问题</em><i></i></button>
+        <button type="button" data-phase="1" aria-pressed="false"><span class="phase-index">02</span><span>MECHANISM</span><em>拆解机制</em><i></i></button>
+        <button type="button" data-phase="2" aria-pressed="false"><span class="phase-index">03</span><span>EVIDENCE</span><em>核对依据</em><i></i></button>
+        <button type="button" data-phase="3" aria-pressed="false"><span class="phase-index">04</span><span>TRANSFER</span><em>迁移原理</em><i></i></button>
+      </div>
+      <p id="scene-fallback" hidden>提出问题 → 拆解机制 → 核对证据与边界 → 提炼有条件的迁移原理</p>
+    </section>
+
+    <section class="introduction" aria-labelledby="intro-title">
+      <div>
+        <p class="section-number">THE PURPOSE / 01</p>
+        <h2 id="intro-title">理解一个方法。<br><span>带走一种思路。</span></h2>
+      </div>
+      <div class="introduction-copy">
+        <p>读完一篇论文，记住模块和结果只是起点。更值得追问的是：设计依赖什么假设？同样的约束下还有哪些选择？换到自己的场景，哪些关系仍然成立？</p>
+        <p>ResearchLens 围绕这些问题研究论文、开源系统与技术方案，把设计逻辑、学术依据和迁移条件整理成能继续推演与查证的笔记。</p>
+        <a class="text-link" href="https://github.com/Tayhirro/explore-skill/blob/main/docs/example-analysis.md">阅读一份分析示例 <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="分析特色">
+      <article><span class="principle-number">01</span><div><h3>追问设计为何这样选</h3><p>从基本假设和约束重新推导，考察替代方案，分辨问题本身、数据条件与工程取舍各自起了什么作用。</p></div><span class="principle-term">DESIGN REASONING</span></article>
+      <article><span class="principle-number">02</span><div><h3>让跨领域联系有依据</h3><p>逐项解释创新的因果机制，与相关理论建立对应，查证支持与反例，标明直接证据和综合推断的边界。</p></div><span class="principle-term">GROUNDED CONNECTIONS</span></article>
+      <article><span class="principle-number">03</span><div><h3>把原理带回自己的工作</h3><p>提炼可以借鉴的核心关系，保留成立条件和映射限制，并留下值得继续验证的问题。</p></div><span class="principle-term">CONDITIONAL TRANSFER</span></article>
+    </section>
+
+    <section class="call-to-action" aria-label="开始使用">
+      <div><p class="section-number">YOUR NEXT QUESTION</p><h2>下一篇论文，<br>你想看清什么？</h2></div>
+      <a href="https://github.com/Tayhirro/explore-skill#快速开始">开始使用 ResearchLens <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer><a class="wordmark" href="./"><span class="lens-mark" aria-hidden="true"></span>ResearchLens</a><p>动画展示分析思路。方法与规则见 <a href="https://github.com/Tayhirro/explore-skill/blob/main/SKILL.md">SKILL.md</a>。</p><span>BY TAYHIRRO</span></footer>
+</body>
+</html>

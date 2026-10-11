@@ -1,8 +1,8 @@
 # ResearchLens：GPT 网页版生图提示词
 
-以下用于你在 GPT 网页版生成替换素材。当前页面已经提供手工排版的 [PNG 横幅](../assets/banner.png)和[可编辑 SVG](../assets/banner.svg)，可以直接使用。
+以下用于你在 GPT 网页版生成静态素材。当前 README 使用由实时 WebGL 场景导出的 [GIF 横幅](../assets/banner.gif)，点击可进入[交互页面](https://tayhirro.github.io/explore-skill/)。动画的维护说明见[动画设计与导出](animation-design.md)。
 
-视觉方向：暖白纸张、深墨绿、少量陶土色；研究手册与编辑设计风格。主体是材料、机制、证据与迁移的关系。图片文字短而清晰，长文放在 README 中。
+以下静态素材沿用暖白、深墨绿与陶土色的研究手册风格；当前动画则使用深墨绿背景、浅绿机制线与暖铜色证据标记。主体都是材料、机制、证据与迁移的关系，长文放在 README 中。
 
 ## 1. GitHub README 横幅
 
@@ -77,10 +77,10 @@ Mechanisms. Evidence. Transfer.
 
 ## 替换方式
 
-生成 README 横幅后，保存为 `assets/banner.png`，即可替换当前图片。若使用 JPEG / WebP，请同步修改中英文 README 的图片路径与格式。
+若要改用生成的静态横幅，保存到 `assets/banner.png`，并将中英文 README 的图片路径从 `assets/banner.gif` 改为 `assets/banner.png`。JPEG / WebP 同样需要同步图片路径。
 
 概念图可以保存为 `assets/method.png`，放在首页价值说明之后，保留准确的文字说明。分享封面单独保存为 `assets/social-preview.png`，上传到 GitHub 仓库设置中的 Social preview。
 
-横幅的 SVG 是当前手工设计源码。替换 PNG 后，SVG 不会自动同步；请在说明中区分两份素材。
+`assets/banner.svg` 和 `assets/banner.png` 保留的是先前的静态设计。当前动态横幅由 `docs/research-lens.js` 绘制，`assets/hero-poster.png` 是同一动画的静帧；修改旧 SVG 不会改变动画。
 
 [返回 README](../README.md)

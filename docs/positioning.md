@@ -97,7 +97,7 @@ ResearchLens turns papers and system designs into research insights through desi
 
 首页优先展示用户会得到的分析、一个可回查示例和首次使用路径。多轮、状态字段、任务目录和内部术语放在方法说明与折叠区。
 
-采用暖白、深墨绿与少量陶土色，使用文献、透镜和分支图形表现“从材料到可迁移原理”。横幅为手工制作的 SVG / PNG，GPT 网页版替换素材的提示词见 [image-prompts.md](image-prompts.md)。
+当前首页以深墨绿、浅绿与暖铜色的动态透镜表现“从材料到可迁移原理”。README 使用同一实时场景导出的 GIF，点击可进入交互页面，设计与维护说明见 [animation-design.md](animation-design.md)。另保留 GPT 网页版静态素材的[提示词](image-prompts.md)。
 
 ## 本次修正的说明
 
